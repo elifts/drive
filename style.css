@@ -1,0 +1,109 @@
+.Remaining {
+    display: flex;
+    width:99%;
+    margin:auto;
+    justify-content: center;
+    align-items:center;
+    border: 3px solid hwb(167 0% 19%); 
+    border-radius: 10px;
+}
+body {
+    background-color: black;
+    color: white;
+}
+.Remainingnum {
+    margin: 20px;
+    padding: 10px;
+    border: 2px solid hwb(167 0% 19%); 
+    border-radius: 5px;
+}
+.driving {
+    display: flex;
+    width:99%;
+    margin:auto;
+    margin-top: 20px;
+    justify-content: center;
+    align-items:center;
+    border: 3px solid hwb(167 0% 19%); 
+    border-radius: 10px;
+}
+.Remaininghours {
+    margin: 20px;
+    padding: 10px;
+    border: 2px solid hwb(167 0% 19%); 
+    border-radius: 5px;
+}
+.Remaininghoursbuttons {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    
+}
+.buttionsize {
+    margin: 0px;
+}
+.calculations {
+    display: flex;
+    width:99%;
+    margin:auto;
+    margin-top: 20px;
+    justify-content: center;
+    align-items:center;
+    border: 3px solid hwb(167 0% 19%); 
+    border-radius: 10px;
+}
+.calculationsnum {
+    margin: 20px;
+    padding: 10px;
+    border: 2px solid hwb(167 0% 19%); 
+    border-radius: 5px;
+}
+p {
+    font-family: "Bungee", sans-serif;
+}
+h1 {
+    font-family: "Bungee", sans-serif;
+}
+.hoursssss {
+    width: 400px;
+    margin-left: 40px;
+}
+.dis {
+    display: flex;
+    width:99%;
+    margin:auto;
+    margin-top: 20px;
+    justify-content: center;
+    align-items:center;
+    border: 3px solid hwb(167 0% 19%); 
+    border-radius: 10px;
+}
+.distance{
+    margin: 20px;
+    padding: 10px;
+    border: 2px solid hwb(167 0% 19%); 
+    border-radius: 5px;
+    
+}
+.km {
+    margin: 0px;
+}
+.loadingbar {
+    display: flex;
+    width:99%;
+    height: 150px;
+    margin:auto;
+    margin-top: 20px;
+    justify-content: center;
+    align-items:center;
+    border: 3px solid hwb(167 0% 19%); 
+    border-radius: 10px;
+    background:
+        repeating-linear-gradient(
+            to right,
+            transparent 0,
+            transparent calc(100% / 365 - 1px),
+            white calc(100% / 365 - 1px),
+            white calc(100% / 365)
+        );
+}

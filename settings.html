@@ -6,6 +6,40 @@
     <title>Document</title>
 </head>
 <body>
-    <input type="number" id="drivingHours" placeholder="Enter driving hours">
+    <div class="days">
+        <div class="hours">
+            <p>day hours: </p>
+            <input type="number" id="drivingHours" placeholder="dayhours">
+        </div>
+        <div class="hours">
+            <p>day minutes</p>
+            <input type="number" id="drivingMinutes" placeholder="dayminutes">
+        </div>
+    </div>
+    <div class="nights">
+        <div class="hours">
+            <p>night hours: </p>
+            <input type="number" id="nightHours" placeholder="nighthours">
+        </div>
+        <div class="hours">
+            <p>night minutes: </p>
+            <input type="number" id="nightMinutes" placeholder="nightminutes">
+        </div>
+    </div>
+    <style>
+        .hours {
+            display: flex;
+            margin: 20px;
+            padding: 10px;
+            border: 2px solid hwb(167 0% 19%); 
+            border-radius: 5px;
+        }
+        
+        body {
+            background-color: black;
+            color: white;
+        }
+        
+    </style>
 </body>
 </html>

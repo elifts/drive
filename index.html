@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="Remaining">
@@ -28,71 +32,92 @@
         </div>
     </div>
     <div class="driving">
-        <h1>DRIVING HOURS:</h1>
+        <h1 class="hoursssss">DRIVING HOURS:</h1>
+
         <div class="Remaininghours">
-            <p id="dayhours">...</p>
+            <p id="dayhours" class="buttionsize">...</p>
+            <div class="Remaininghoursbuttons">
+                <button class="dayhoursbutton" style="width: 20px; height: 20px;" onclick="addhour()">+</button>
+                <button class="dayhoursbutton" style="width: 20px; height: 20px;" onclick="subhour()">-</button>
+            </div>
+        </div>
+        <div class="Remaininghours">
+            <p id="dayminutes" class="buttionsize">...</p>
+            <div class="Remaininghoursbuttons">
+                <button class="dayminutesbutton" onclick="addminute()">+</button>
+                <button class="dayminutesbutton" onclick="subminute()">-</button>
+            </div>
+        </div>
+
+        <p>+</p>
+
+        <div class="Remaininghours">
+            <p id="nighthours" class="buttionsize">...</p>
+            <div class="Remaininghoursbuttons">
+                <button class="nighthoursbutton" style="width: 20px; height: 20px;" onclick="naddhour()">+</button>
+                <button class="nighthoursbutton" style="width: 20px; height: 20px;" onclick="nsubhour()">-</button>
+            </div>
+        </div>
+        <div class="Remaininghours">
+            <p id="nightminutes" class="buttionsize">...</p>
+            <div class="Remaininghoursbuttons">
+                <button class="nightminutesbutton" onclick="naddminute()">+</button>
+                <button class="nightminutesbutton" onclick="nsubminute()">-</button>
+            </div>
+        </div>
+        <p>=</p>
+        <div class="Remaininghours">
+            <p id="totalhours" class="buttionsize">...</p>
+        </div>
+        <div class="Remaininghours">
+            <p id="totalmins" class="buttionsize">...</p>
         </div>
     </div>
-    <script>
-        var birthday = new Date("2027-09-19");
-        function updatedate() {
-            var today = new Date();
-            var seconds_remaining = 60-today.getSeconds();
-            var miliseconds_remaining = 1000-today.getMilliseconds();
-            var minutes_remaining = 60-today.getMinutes();
-            var hours_remaining = 24-today.getHours();
-            var difference = birthday.getTime() - today.getTime();
-            var days_remaining = Math.ceil(difference / (1000 * 3600 * 24));
-            var weeks_remaining = (Math.round((days_remaining / 7)*10))/10;
 
-            document.getElementById("weeksleft").innerHTML = "weeks: " + weeks_remaining;
-            document.getElementById("daysleft").innerHTML = "days: " + days_remaining;
-            document.getElementById("hoursleft").innerHTML = "hours: " + hours_remaining;
-            document.getElementById("minutesleft").innerHTML = "minutes: " + minutes_remaining;
-            document.getElementById("secondsleft").innerHTML = "seconds: " + seconds_remaining;
-            document.getElementById("milisecondsleft").innerHTML = "milliseconds: " + miliseconds_remaining;
+    <div class="dis">
+        <h1>distance: </h1>
+        <div class="distance">
+            <p id="km" class="km">...</p>
+            <div class="kmbuttons">
+                <button class="km" onclick="addkm()">+</button>
+                <button class="km" onclick="subkm()">-</button>
+            </div>
+        </div>
+        <div class="distance">
+            <p id="meters" class="meters">...</p>
+        </div>
+        <div class="distance">
+            <p id="speed" class="speed">...</p>
+        </div>
+        <div class="distance">
+            <p id="distiancetoepping" class="km">...</p>
+            <div class="scbuttons">
+                <button class="ep" onclick="addep()">+</button>
+                <button class="ep" onclick="subep()">-</button>
+            </div>
+        </div>
+        <div class="distance">
+            <p id="distiancetoschool" class="km">...</p>
+            <div class="scbuttons">
+                <button class="sc" onclick="addsc()">+</button>
+                <button class="sc" onclick="subsc()">-</button>
+            </div>
+        </div>
+    </div>
+    <div class="calculations">
+        <h1>CALCULATIONS: </h1>
+        <div class="calculationsnum">
+            <p id="hoursperweek">...</p>
+        </div>
+        <div class="calculationsnum">
+            <p id="remaininghours">...</p>
+        </div>
+        <div class="calculationsnum">
+            <p id="remainingnighthours">...</p>
+        </div>
+    </div>
+    <div class="loadingbar"></div>
+    <script src="code.js"></script>
 
-            var Dayhours = 0;
-            var Daymins = 0;
-            var nighthours = 0;
-            var nightmins = 0;
-            
-        }
-        updatedate();
-        setInterval(updatedate, 1);
-        
-        
-    </script>
-    <style>
-        .Remaining {
-            display: flex;
-            width:90%;
-            margin:auto;
-            justify-content: center;
-            align-items:center;
-            border: 3px solid hwb(167 0% 19%); 
-            border-radius: 10px;
-        }
-        body {
-            background-color: black;
-            color: white;
-        }
-        .Remainingnum {
-            margin: 20px;
-            padding: 10px;
-            border: 2px solid hwb(167 0% 19%); 
-            border-radius: 5px;
-        }
-        .driving {
-            display: flex;
-            width:90%;
-            margin:auto;
-            margin-top: 20px;
-            justify-content: center;
-            align-items:center;
-            border: 3px solid hwb(167 0% 19%); 
-            border-radius: 10px;
-        }
-</style>
 </body>
 </html>
