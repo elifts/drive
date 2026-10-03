@@ -6,9 +6,93 @@
     <title>Document</title>
 </head>
 <body>
-    <p id="demo">hi</p>
+    <div class="Remaining">
+        <h1>TIME REMAINING: </h1>
+        <div class="Remainingnum">
+            <p id="weeksleft">...</p>
+        </div>
+        <div class="Remainingnum">
+            <p id="daysleft">...</p>
+        </div>
+        <div class="Remainingnum">
+            <p id="hoursleft">...</p>
+        </div>
+        <div class="Remainingnum">
+            <p id="minutesleft">...</p>
+        </div>
+        <div class="Remainingnum">
+            <p id="secondsleft">...</p>
+        </div>
+        <div class="Remainingnum">
+            <p id="milisecondsleft">...</p>
+        </div>
+    </div>
+    <div class="driving">
+        <h1>DRIVING HOURS:</h1>
+        <div class="Remaininghours">
+            <p id="dayhours">...</p>
+        </div>
+    </div>
     <script>
+        var birthday = new Date("2027-09-19");
+        function updatedate() {
+            var today = new Date();
+            var seconds_remaining = 60-today.getSeconds();
+            var miliseconds_remaining = 1000-today.getMilliseconds();
+            var minutes_remaining = 60-today.getMinutes();
+            var hours_remaining = 24-today.getHours();
+            var difference = birthday.getTime() - today.getTime();
+            var days_remaining = Math.ceil(difference / (1000 * 3600 * 24));
+            var weeks_remaining = (Math.round((days_remaining / 7)*10))/10;
 
+            document.getElementById("weeksleft").innerHTML = "weeks: " + weeks_remaining;
+            document.getElementById("daysleft").innerHTML = "days: " + days_remaining;
+            document.getElementById("hoursleft").innerHTML = "hours: " + hours_remaining;
+            document.getElementById("minutesleft").innerHTML = "minutes: " + minutes_remaining;
+            document.getElementById("secondsleft").innerHTML = "seconds: " + seconds_remaining;
+            document.getElementById("milisecondsleft").innerHTML = "milliseconds: " + miliseconds_remaining;
+
+            var Dayhours = 0;
+            var Daymins = 0;
+            var nighthours = 0;
+            var nightmins = 0;
+            
+        }
+        updatedate();
+        setInterval(updatedate, 1);
+        
+        
     </script>
+    <style>
+        .Remaining {
+            display: flex;
+            width:90%;
+            margin:auto;
+            justify-content: center;
+            align-items:center;
+            border: 3px solid hwb(167 0% 19%); 
+            border-radius: 10px;
+        }
+        body {
+            background-color: black;
+            color: white;
+        }
+        .Remainingnum {
+            margin: 20px;
+            padding: 10px;
+            border: 2px solid hwb(167 0% 19%); 
+            border-radius: 5px;
+        }
+        .driving {
+            display: flex;
+            width:90%;
+            margin:auto;
+            margin-top: 20px;
+            justify-content: center;
+            align-items:center;
+            border: 3px solid hwb(167 0% 19%); 
+            border-radius: 10px;
+        }
+</style>
 </body>
 </html>
