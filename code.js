@@ -71,7 +71,18 @@ function updatedate() {
     document.getElementById("hoursperweek").innerHTML = "hour/week: " + hoursperweek;
     document.getElementById("remaininghours").innerHTML = "remaining hours: " + remaininghours;
     document.getElementById("remainingnighthours").innerHTML = "remaining night hours: " + remainingnighthours;
+    document.getElementById("loadingbar").style.width = ((365 - days_remaining) / 365) * 100 + "%";
+    let daysPassed = 365 - days_remaining;
 
+    const dots = document.querySelectorAll(".dot");
+
+    dots.forEach((dot, index) => {
+        if (index < daysPassed) {
+            dot.style.background = "rgba(0, 30, 0)";
+        } else {
+            dot.style.background = "rgba(30, 30, 30)";
+        }
+    });
 }
 
 function round(x,y){
@@ -152,4 +163,13 @@ const saveToLocalStorage = () => {
     localStorage.setItem('km', km);
     localStorage.setItem('tripstoepping', tripstoepping);
     localStorage.setItem('tripstoschool', tripstoschool);
+}
+const dotgrid = document.getElementById("dotgrid");
+
+for (let i = 0; i < 361; i++) {
+    const dot = document.createElement("div");
+
+    dot.className = "dot";
+
+    dotgrid.appendChild(dot);
 }
