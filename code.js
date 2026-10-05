@@ -53,7 +53,7 @@ function updatedate() {
     document.getElementById("totalmins").innerHTML = "total minutes: " + totalmins;
 
     meters = km * 1000;
-    speed = km / totalhours;
+    speed = round(km / totalhours,2);
     distiancetoepping = round(km/24.8, 2);
     distiancetoschool = round(km/5.3, 2);
     document.getElementById("km").innerHTML = "Total km: " + km;
