@@ -45,6 +45,11 @@ function updatedate() {
     }
     totalhours = Dayhours + nighthours;
     totalmins = Daymins + nightmins;
+    if(totalmins>60){
+        totalhours++
+        totalmins+-60
+    }
+    
     document.getElementById("dayhours").innerHTML = "day hour: " + Dayhours;
     document.getElementById("dayminutes").innerHTML = "day minutes: " + Daymins;
     document.getElementById("nighthours").innerHTML = "night hour: " + nighthours;
