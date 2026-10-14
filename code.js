@@ -7,8 +7,14 @@ nightmins = Number(localStorage.getItem('nightminutes')) || 0;
 km = Number(localStorage.getItem('km')) || 0;
 tripstoschool = Number(localStorage.getItem('tripstoschool')) || 0;
 tripstoepping = Number(localStorage.getItem('tripstoepping')) || 0;
+breath = Number(localStorage.getItem('breath')) || 0;
+randomdriv = Number(localStorage.getItem('randomdriv')) || 0;
+instructordr = Number(localStorage.getItem('instructordr')) || 0;
+drivesss = Number(localStorage.getItem('drivesss')) || 0;
 
 rand = Math.random();
+
+let kmsss = km;
 
 function updatedate() {
     var today = new Date();
@@ -61,7 +67,7 @@ function updatedate() {
     speed = round(km / totalhours,2);
     distiancetoepping = round(km/24.8, 2);
     distiancetoschool = round(km/5.3, 2);
-    document.getElementById("km").innerHTML = "Total km: " + km;
+    document.getElementById("km").innerHTML = "Total km: " + km + "-" + kmsss;
     document.getElementById("meters").innerHTML = "Total meters: " + meters;
     document.getElementById("speed").innerHTML = "Average Speed: " + speed;
     document.getElementById("distiancetoepping").innerHTML = "trips to epping: " + distiancetoepping + "/" + tripstoepping;
@@ -88,6 +94,13 @@ function updatedate() {
             dot.style.background = "rgba(30, 30, 30)";
         }
     });
+
+    properdrvies = drivesss - randomdriv;
+
+    document.getElementById("breathss").innerHTML = "breath tests: " + breath;
+    document.getElementById("randomdriv").innerHTML = "random driving: " + randomdriv + "/" + properdrvies;
+    document.getElementById("instructordr").innerHTML = "instructor driving: " + instructordr + "->" + instructordr*3;
+    document.getElementById("drivesss").innerHTML = "drives: " + drivesss;
 }
 
 function round(x,y){
@@ -156,6 +169,39 @@ const subep = () => {
     saveToLocalStorage();
 }
 
+const addbc = () => {
+    breath++;
+    saveToLocalStorage();
+}
+const subbc = () => {
+    breath--;
+    saveToLocalStorage();
+}
+const addrd = () => {
+    randomdriv++;
+    saveToLocalStorage();
+}
+const subrd = () => {
+    randomdriv--;
+    saveToLocalStorage();
+}
+const addit = () => {
+    instructordr++;
+    saveToLocalStorage();
+}
+const subit = () => {
+    instructordr--;
+    saveToLocalStorage();
+}
+const adddr = () => {
+    drivesss++;
+    saveToLocalStorage();
+}
+const subdr = () => {
+    drivesss--;
+    saveToLocalStorage();
+}
+
 
 updatedate();
 setInterval(updatedate, 1);
@@ -168,6 +214,10 @@ const saveToLocalStorage = () => {
     localStorage.setItem('km', km);
     localStorage.setItem('tripstoepping', tripstoepping);
     localStorage.setItem('tripstoschool', tripstoschool);
+    localStorage.setItem('breath', breath);
+    localStorage.setItem('randomdriv', randomdriv);
+    localStorage.setItem('instructordr', instructordr);
+    localStorage.setItem('drivesss', drivesss);
 }
 const dotgrid = document.getElementById("dotgrid");
 
